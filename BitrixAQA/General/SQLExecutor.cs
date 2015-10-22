@@ -114,12 +114,12 @@ namespace BitrixAQA.General
         /// <summary>
         /// Выполняем sql запрос
         /// </summary>
-        /// <param name="Querry">тело запроса</param>
-        public static void Execute(string Querry)
+        /// <param name="Query">тело запроса</param>
+        public static void Execute(string Query)
         {
             switch (DBType)
             {
-                case "MYSQL": ExecuteMYSQL(Querry); break;
+                case "MYSQL": ExecuteMYSQL(Query); break;
                 default: MessageBox.Show("Неверный тип БД.\r\n\nСтранная проблема.\r\nНет типа БД, или он работает некорректно.\r\n\nСообщить автору.", "Грусть и печаль"); break;
             }
         }
@@ -127,14 +127,14 @@ namespace BitrixAQA.General
         /// <summary>
         /// Выполняем MYSQL запрос
         /// </summary>
-        /// <param name="Querry">запрос</param>
-        public static void ExecuteMYSQL(string Querry)
+        /// <param name="Query">запрос</param>
+        public static void ExecuteMYSQL(string Query)
         {
             try
             {
                 MySqlConnection Connection = new MySqlConnection(ConnectionString);
                 Connection.Open();
-                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(Querry, Connection);
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(Query, Connection);
                 MySqlCommandBuilder commandBuilder = new MySqlCommandBuilder(dataAdapter);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);
@@ -150,14 +150,14 @@ namespace BitrixAQA.General
         /// <summary>
         /// Выполняем MSSQL запрос
         /// </summary>
-        /// <param name="Querry">запрос</param>
-        public static void ExecuteMSSQL(string Querry)
+        /// <param name="Query">запрос</param>
+        public static void ExecuteMSSQL(string Query)
         {
             try
             {
                 SqlConnection Connection = new SqlConnection(ConnectionString);
                 Connection.Open();
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(Querry, Connection);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(Query, Connection);
                 SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
                 DataTable table = new DataTable();
                 dataAdapter.Fill(table);

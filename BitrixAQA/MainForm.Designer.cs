@@ -70,7 +70,7 @@
             this.cmbboxDBType = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnExecute = new System.Windows.Forms.Button();
-            this.rtextboxSQLQuerry = new System.Windows.Forms.RichTextBox();
+            this.rtextboxSQLQuery = new System.Windows.Forms.RichTextBox();
             this.tpComponents = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tbComponentsCheckPrefix = new System.Windows.Forms.TextBox();
@@ -461,7 +461,7 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.btnExecute);
-            this.groupBox4.Controls.Add(this.rtextboxSQLQuerry);
+            this.groupBox4.Controls.Add(this.rtextboxSQLQuery);
             this.groupBox4.Location = new System.Drawing.Point(6, 228);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(389, 169);
@@ -479,13 +479,13 @@
             this.btnExecute.UseVisualStyleBackColor = true;
             this.btnExecute.Click += new System.EventHandler(this.btnExecute_Click);
             // 
-            // rtextboxSQLQuerry
+            // rtextboxSQLQuery
             // 
-            this.rtextboxSQLQuerry.Location = new System.Drawing.Point(3, 16);
-            this.rtextboxSQLQuerry.Name = "rtextboxSQLQuerry";
-            this.rtextboxSQLQuerry.Size = new System.Drawing.Size(378, 105);
-            this.rtextboxSQLQuerry.TabIndex = 1;
-            this.rtextboxSQLQuerry.Text = "";
+            this.rtextboxSQLQuery.Location = new System.Drawing.Point(3, 16);
+            this.rtextboxSQLQuery.Name = "rtextboxSQLQuery";
+            this.rtextboxSQLQuery.Size = new System.Drawing.Size(378, 105);
+            this.rtextboxSQLQuery.TabIndex = 1;
+            this.rtextboxSQLQuery.Text = "";
             // 
             // tpComponents
             // 
@@ -689,7 +689,7 @@
         public System.Windows.Forms.Label lblConnStatus;
         private System.Windows.Forms.Label lblConnStatusTitle;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RichTextBox rtextboxSQLQuerry;
+        private System.Windows.Forms.RichTextBox rtextboxSQLQuery;
         private System.Windows.Forms.Button btnSetConnSettings;
         /// <summary>
         /// Строка подключения к БД

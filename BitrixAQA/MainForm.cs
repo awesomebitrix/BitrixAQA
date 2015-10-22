@@ -225,7 +225,7 @@ namespace BitrixAQA
         private void btnExecute_Click(object sender, EventArgs e)
         {
             if (SQLExecutor.ConnectionStringTest())
-                SQLExecutor.Execute(rtextboxSQLQuerry.Text);
+                SQLExecutor.Execute(rtextboxSQLQuery.Text);
             else
                 MessageBox.Show("Нет соединения с базой данных.\r\nПроверьте строку подключения.", "Невозможно выполнить запрос.", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
