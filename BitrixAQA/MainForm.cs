@@ -85,15 +85,16 @@ namespace BitrixAQA
             var threads = new List<Thread>();
             Control.CheckForIllegalCrossThreadCalls = false;
             //проверка всех урлов сайта
+            string address = null;
             if (tcMain.SelectedTab == tcMain.TabPages["tpVarious"] && cbCheckAllSite.Checked)
             {
                 if (tbCheckUrlsUrlToCheck.Text != "")
                 {
                     string[] siteList = tbCheckUrlsUrlToCheck.Text.Split(new Char[] { '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
-
-                    for (int siteID = 0; siteID < siteList.Count(); siteID++)
+                    for (int siteID = 0; siteID < siteList.Length; siteID++)
                     {
-                        threads.Add(new Thread(() => CheckUrls.Run(siteList[siteID].Trim())));
+                        address = siteList[siteID];
+                        threads.Add(new Thread(() => CheckUrls.Run(address.Trim())));
                     }
                 }
                 else
