@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
@@ -63,6 +64,11 @@ namespace BitrixAQA.Selenium.Framework
 
                             FirefoxProfile FirefoxProfile = new FirefoxProfile(ProfileDirectory);
                             FirefoxBinary FirefoxBinary = new FirefoxBinary(BinaryDirectory);
+
+                            ScreenCapture sc = new ScreenCapture();
+                            DirectoryInfo dir = new DirectoryInfo(System.IO.Path.Combine(Shared.appdir, "Downloads"));
+                            if (!dir.Exists)
+                                dir.Create();
 
                             FirefoxProfile.AddExtension(System.IO.Path.Combine(Shared.appdir, "JSErrorCollector.xpi"));
                             FirefoxProfile.SetPreference("browser.download.folderList", 2);

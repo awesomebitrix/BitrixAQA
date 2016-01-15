@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Runtime.InteropServices;
 using BitrixAQA.General;
 
@@ -132,6 +133,9 @@ namespace BitrixAQA.Selenium.General
             string fileName = "screenshot_" + DateTime.Now.Day + DateTime.Now.Month + DateTime.Now.Year + DateTime.Now.Hour + DateTime.Now.Minute + DateTime.Now.Second + ".png";
 
             ScreenCapture sc = new ScreenCapture();
+            DirectoryInfo dir = new DirectoryInfo(Log.StartupPath + "\\screenshots\\");
+            if (!dir.Exists)
+                dir.Create();
             sc.CaptureScreenToFile(Log.StartupPath + "\\screenshots\\" + fileName, ImageFormat.Png);
             if (returnStringPath)
                 return Log.StartupPath + "screenshots\\" + fileName;
